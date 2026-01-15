@@ -10,8 +10,8 @@ class Navicli < Formula
 
   def install
     # 如果 release.tar.gz 中已经有编译好的二进制，直接安装
-    if File.exist?("navicli")
-      bin.install "navicli"
+    if File.exist?("navicli-darwin-arm64") && Hardware::CPU.arm?
+      bin.install "navicli-darwin-arm64" => "navicli"
     else
       # 否则从源代码编译
       system "go", "build", "-o", "navicli", "."
