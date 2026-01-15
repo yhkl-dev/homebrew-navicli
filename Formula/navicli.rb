@@ -5,17 +5,15 @@ class Navicli < Formula
   sha256 "3bea982490aeb77d13a22b9510b4a37fab2ac1756579727cc037e24ab5a9b32c"
   license "MIT"
 
-  depends_on "go" => :build
   depends_on "mpv"
 
   def install
-    # 如果 release.tar.gz 中已经有编译好的二进制，直接安装
-    if File.exist?("navicli-darwin-arm64") && Hardware::CPU.arm?
+    if Hardware::CPU.arm?
+      # Apple Silicon (M1/M2/M3 等)
       bin.install "navicli-darwin-arm64" => "navicli"
     else
-      # 否则从源代码编译
-      system "go", "build", "-o", "navicli", "."
-      bin.install "navicli"
+      # Intel Mac
+      bin.install "navicli-darwin-amd64" => "navicli"
     end
   end
 
