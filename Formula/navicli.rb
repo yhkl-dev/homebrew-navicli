@@ -1,8 +1,8 @@
 class Navicli < Formula
   desc "A lightweight command line music player for Navidrome"
   homepage "https://github.com/yhkl-dev/NaviCLI"
-  url "https://github.com/yhkl-dev/NaviCLI/releases/download/v1.0.5/release.tar.gz"
-  sha256 "3bea982490aeb77d13a22b9510b4a37fab2ac1756579727cc037e24ab5a9b32c"
+  url "https://github.com/yhkl-dev/NaviCLI/releases/download/v2.0.0/release.tar.gz"
+  sha256 "c708febd73b1f4907fe70a1b9982e8beeabb0edb30f01c378e06c8a42c0a793d"
   license "MIT"
 
   depends_on "mpv"
